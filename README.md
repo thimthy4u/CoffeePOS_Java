@@ -2,6 +2,8 @@
 
 A modern desktop Point of Sale (POS) system built with **JavaFX 21**, **JDK 21**, and **MySQL**, packaged natively for Ubuntu Linux as a standalone `.deb` installer.
 
+[![Download .deb](https://img.shields.io/github/v/release/thimthy4u/java_project_coffee_pos?label=Download%20.deb&logo=ubuntu&color=E95420)](https://github.com/thimthy4u/java_project_coffee_pos)
+
 ## 🛠 Tech Stack & Prerequisites
 
 - **OS:** Ubuntu Linux (x86_64)
@@ -180,3 +182,11 @@ sudo apt remove coffee-pos
 rm -f ~/.local/share/applications/coffee_pos.desktop
 update-desktop-database ~/.local/share/applications
 ```
+
+## 📸 App Preview
+
+### Login Screen
+![Login Screen](assets/loginScreen.png)
+
+### Main POS Dashboard
+![Main POS Screen](assets/mainScreen.png)
