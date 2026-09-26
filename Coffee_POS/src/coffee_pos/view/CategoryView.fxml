@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee_pos.controller.CategoryController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="454.0" prefWidth="800.0" spacing="10.0" style="-fx-padding: 10px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label style="-fx-font-size: 24px; -fx-font-weight: Bold;" text="Category Managements" />
+            <TableView fx:id="categoryTableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Name" />
+                <TableColumn fx:id="descriptionColumn" prefWidth="500.0" text="Description" />
+              </columns>
+            </TableView>
+            <HBox spacing="20.0">
+               <children>
+                  <GridPane prefHeight="107.0" prefWidth="350.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.20001220703125" minWidth="10.0" prefWidth="91.80001831054688" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.1999816894531" minWidth="10.0" prefWidth="258.1999816894531" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Name:" />
+                        <TextField fx:id="nameField" GridPane.columnIndex="1" />
+                        <TextArea fx:id="descriptionArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Description:" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button onAction="#handleAddButton" text="Add">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../icons/save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button onAction="#handleUpdateButton" text="Update">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../icons/update.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button onAction="#handleDeleteButton" text="Delete">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../icons/delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button onAction="#handleClearButton" text="Clear">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../icons/clear.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>-->
+
+<AnchorPane style="-fx-background-color: #f5f1eb;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee_pos.controller.CategoryController">
+   <children>
+      <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="880.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <!-- Header Section -->
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" style="-fx-background-color: #8B4513; -fx-background-radius: 10; -fx-padding: 20;">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;" text="Category Management">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" text="Manage your product categories" />
+                     </children>
+                  </HBox>
+      
+                  <!-- Main Content Area -->
+                  <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                     <children>
+                         <!--Table Section--> 
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Categories List" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="categoryCountLabel" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d; -fx-background-color: #ecf0f1; -fx-background-radius: 12; -fx-padding: 5 10;" text="0 categories" />
+                                 </children>
+                              </HBox>
+                              
+                              <TableView fx:id="categoryTableView" prefHeight="300.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                    <TableColumn fx:id="idColumn" minWidth="60.0" prefWidth="80.0" style="-fx-alignment: CENTER;" text="ID" />
+                                    <TableColumn fx:id="nameColumn" minWidth="120.0" prefWidth="180.0" text="Category Name" />
+                                    <TableColumn fx:id="descriptionColumn" minWidth="200.0" prefWidth="300.0" text="Description" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+      
+                        <!-- Form Section -->
+                        <VBox prefWidth="350.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Category Details" />
+                              
+                              <GridPane hgap="10.0" vgap="15.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" minWidth="80.0" prefWidth="80.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" prefWidth="220.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="30.0" prefHeight="40.0" vgrow="NEVER" />
+                                    <RowConstraints minHeight="80.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;" text="Name:" GridPane.valignment="TOP" />
+                                    <TextField fx:id="nameField" prefHeight="35.0" promptText="Enter category name" style="-fx-background-radius: 6; -fx-border-color: #bdc3c7; -fx-border-radius: 6; -fx-font-size: 13px;" GridPane.columnIndex="1" />
+                                    
+                                    <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;" text="Description:" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                    <TextArea fx:id="descriptionArea" prefHeight="100.0" promptText="Enter category description" style="-fx-background-radius: 6; -fx-border-color: #bdc3c7; -fx-border-radius: 6; -fx-font-size: 13px;" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+      
+                              <Region VBox.vgrow="ALWAYS" />
+      
+                              <!-- Action Buttons -->
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Button fx:id="addButton" onAction="#handleAddButton" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0, 0, 1);" text="Add Category" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/save.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="updateButton" onAction="#handleUpdateButton" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0, 0, 1);" text="Update" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/update.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Button fx:id="deleteButton" onAction="#handleDeleteButton" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0, 0, 1);" text="Delete" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/delete.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="clearButton" onAction="#handleClearButton" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0, 0, 1);" text="Clear" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/clear.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

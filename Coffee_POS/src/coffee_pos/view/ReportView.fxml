@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee_pos.controller.ReportController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="titleLabel" text="Sale Report">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <HBox alignment="BOTTOM_LEFT" spacing="10.0">
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Start Date" />
+                                <DatePicker fx:id="startDatePicker" />
+                            </children>
+                        </VBox>
+                        <VBox>
+                            <children>
+                                <Label text="End Date" />
+                                <DatePicker fx:id="endDatePicker" />
+                            </children>
+                        </VBox>
+
+
+                        <Button onAction="#handleGenerateReport" text="Generate Report" />
+                        <Button onAction="#handleExportToCSV" text="Export to CSV" />
+                        <Label fx:id="filter" text="Filter:" />
+                        <ComboBox fx:id="cashierFilterComboBox" promptText="Filter by User (Admin Only)" />
+                    </children>
+                </HBox>
+
+                <VBox fx:id="salesReportBox" VBox.vgrow="ALWAYS">
+                    <children>
+                        <TableView fx:id="reportTableView" prefHeight="450.0">
+                            <columns>
+                                <TableColumn fx:id="productNameColumn" prefWidth="250.0" text="Product Name" />
+                                <TableColumn fx:id="quantityColumn" prefWidth="150.0" text="Quantity Sold" />
+                        <TableColumn fx:id="totalPriceColumn" prefWidth="100.0" text="Total Price" />
+                        <TableColumn fx:id="saleDateColumn" prefWidth="100.0" text="Sale Date" />
+                        <TableColumn fx:id="cashierNameColumn" prefWidth="100.0" text="Cashier Name" />
+                            </columns>
+                        </TableView>
+                        <Label fx:id="totalSalesLabel" text="Total Sales for Period: $0.00" visible="false">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                            <padding>
+                                <Insets top="10.0" />
+                            </padding>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>-->
+
+<AnchorPane style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee_pos.controller.ReportController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <children>
+        <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Header Section -->
+                <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <padding>
+                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label fx:id="titleLabel" style="-fx-text-fill: #2c3e50;" text="Sale Report">
+                            <font>
+                                <Font name="System Bold" size="32.0" />
+                            </font>
+                        </Label>
+                        <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;" text="Generate comprehensive sales reports with filtering options" />
+                    </children>
+                </VBox>
+
+                <!-- Controls Section -->
+                <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <padding>
+                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #34495e;" text="Report Parameters" />
+                        
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <!-- Date Range Section -->
+                                <VBox spacing="8.0" style="-fx-min-width: 160px;">
+                                    <children>
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 13px; -fx-text-fill: #2c3e50;" text="Start Date" />
+                                        <DatePicker fx:id="startDatePicker" prefWidth="160.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #bdc3c7; -fx-border-width: 1px;" />
+                                    </children>
+                                </VBox>
+                                
+                                <VBox spacing="8.0" style="-fx-min-width: 160px;">
+                                    <children>
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 13px; -fx-text-fill: #2c3e50;" text="End Date" />
+                                        <DatePicker fx:id="endDatePicker" prefWidth="160.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #bdc3c7; -fx-border-width: 1px;" />
+                                    </children>
+                                </VBox>
+
+                                <Separator orientation="VERTICAL" prefHeight="60.0" style="-fx-background-color: #ecf0f1;" />
+
+                                <!-- Filter Section -->
+                                <VBox spacing="8.0" style="-fx-min-width: 200px;">
+                                    <children>
+                                        <Label fx:id="filter" style="-fx-font-weight: bold; -fx-font-size: 13px; -fx-text-fill: #2c3e50;" text="Filter Options" />
+                                        <ComboBox fx:id="cashierFilterComboBox" prefWidth="200.0" promptText="Filter by User (Admin Only)" style="-fx-background-color: #ecf0f1; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #bdc3c7; -fx-border-width: 1px;" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Spacer -->
+                                <Region HBox.hgrow="ALWAYS" />
+
+                                <!-- Action Buttons -->
+                                <VBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="163.0" spacing="10.0">
+                                    <children>
+                                        <Button onAction="#handleGenerateReport" prefHeight="40.0" prefWidth="167.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 6px; -fx-font-weight: bold; -fx-font-size: 13px; -fx-padding: 10px 20px;" text="Generate Report" />
+                                        <Button onAction="#handleExportToCSV" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 6px; -fx-font-weight: bold; -fx-font-size: 13px; -fx-padding: 10px 20px;" text="Export to CSV" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Report Table Section -->
+                <VBox fx:id="salesReportBox" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                    </padding>
+                    <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: #34495e;" text="Sales Data" />
+                        
+                        <TableView fx:id="reportTableView" prefHeight="450.0" style="-fx-background-color: #ffffff; -fx-border-color: #ecf0f1; -fx-border-width: 1px; -fx-border-radius: 6px;">
+                            <columns>
+                                <TableColumn fx:id="productNameColumn" prefWidth="280.0" style="-fx-alignment: CENTER-LEFT;" text="Product Name" />
+                                <TableColumn fx:id="quantityColumn" prefWidth="120.0" style="-fx-alignment: CENTER;" text="Quantity" />
+                                <TableColumn fx:id="totalPriceColumn" prefWidth="120.0" style="-fx-alignment: CENTER;" text="Total Price" />
+                                <TableColumn fx:id="saleDateColumn" prefWidth="130.0" style="-fx-alignment: CENTER;" text="Sale Date" />
+                                <TableColumn fx:id="cashierNameColumn" prefWidth="150.0" style="-fx-alignment: CENTER-LEFT;" text="Cashier" />
+                            </columns>
+                        </TableView>
+                        
+                        <Separator style="-fx-background-color: #ecf0f1;" />
+                        
+                        <HBox alignment="CENTER_RIGHT">
+                            <children>
+                                <Label fx:id="totalSalesLabel" style="-fx-background-color: #e8f5e8; -fx-text-fill: #27ae60; -fx-background-radius: 6px; -fx-padding: 15px 25px;" text="Total Sales for Period: $0.00" visible="false">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

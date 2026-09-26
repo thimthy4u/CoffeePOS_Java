@@ -1,0 +1,23 @@
+# Archives & compressed downloads
+*.rar
+*.zip
+*.tar.gz
+
+# Local SDK & Tooling directories (downloaded via README steps)
+javafx-sdk-*/
+javafx-jmods-*/
+mysql-connector-j/
+libs/
+
+# NetBeans & Ant build outputs
+Coffee_POS/build/
+Coffee_POS/dist/
+Coffee_POS/installer_input/
+Coffee_POS/nbproject/private/
+
+# Data & reporting outputs
+*.csv
+
+# System files
+.DS_Store
+*.log
